@@ -1,0 +1,672 @@
+
+<!DOCTYPE html>
+<html class="no-js css-menubar" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="description" content="bootstrap admin template">
+    <meta name="author" content="">
+    
+    <title>Carousel | Remark Admin Template</title>
+    
+    <link rel="apple-touch-icon" href="<?php echo base_url(); ?>assets/base/assets/images/apple-touch-icon.png">
+    <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/base/assets/images/favicon.ico">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/global/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/global/css/bootstrap-extend.min.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/base/assets/css//site.min.css">
+    
+    <!-- Plugins -->
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/global/vendor/animsition/animsition.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/global/vendor/asscrollable/asScrollable.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/global/vendor/switchery/switchery.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/global/vendor/intro-js/introjs.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/global/vendor/slidepanel/slidePanel.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/global/vendor/flag-icon-css/flag-icon.css">
+        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/global/vendor/owl-carousel/owl.carousel.css">
+        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/global/vendor/slick-carousel/slick.css">
+        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/base/assets/examples/css/uikit/carousel.css">
+        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/global/vendor/asscrollable/asScrollable.css">
+        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/base/assets/examples/css/advanced/scrollable.css">
+    
+    <!-- Fonts -->
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/global/fonts/web-icons/web-icons.min.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/global/fonts/brand-icons/brand-icons.min.css">
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>
+    
+    <!--[if lt IE 9]>
+    <script src="<?php echo base_url(); ?>assets/global/vendor/html5shiv/html5shiv.min.js"></script>
+    <![endif]-->
+    
+    <!--[if lt IE 10]>
+    <script src="<?php echo base_url(); ?>assets/global/vendor/media-match/media.match.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/global/vendor/respond/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- Scripts -->
+    <script src="<?php echo base_url(); ?>assets/global/vendor/breakpoints/breakpoints.js"></script>
+    <script>
+      Breakpoints();
+    </script>
+  </head>
+  <body class="animsition">
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <nav class="site-navbar navbar navbar-default navbar-fixed-top navbar-mega" role="navigation">
+    
+      <div class="navbar-header" >
+        <button type="button" class="navbar-toggler collapsed" data-target="#site-navbar-collapse"
+          data-toggle="collapse">
+          <i class="icon wb-more-horizontal" aria-hidden="true"></i>
+        </button>
+        <div class="navbar-brand navbar-brand-center site-gridmenu-toggle" data-toggle="gridmenu">
+          <img class="navbar-brand-logo" src="<?php echo base_url(); ?>assets/base/assets/images/logo.png" title="Remark">
+          <span class="navbar-brand-text hidden-xs-down"> Remark</span>
+        </div>
+      </div>
+    
+      <div class="navbar-container container-fluid">
+        <!-- Navbar Collapse -->
+        <div class="collapse navbar-collapse navbar-collapse-toolbar" id="site-navbar-collapse">
+          <!-- Navbar Toolbar -->
+          <ul class="nav navbar-toolbar">
+            <li class="nav-item hidden-sm-down" id="toggleFullscreen">
+              <a class="nav-link icon icon-fullscreen" data-toggle="fullscreen" href="#" role="button">
+                <span class="sr-only">Toggle fullscreen</span>
+              </a>
+            </li>
+          </ul>
+          <!-- End Navbar Toolbar -->
+    
+          <!-- Navbar Toolbar Right -->
+          <ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">
+            <li class="nav-item dropdown">
+              <a class="nav-link navbar-avatar" data-toggle="dropdown" href="#" aria-expanded="false"
+                data-animation="scale-up" role="button">
+                <span class="avatar avatar-online">
+                  <img src="<?php echo base_url(); ?>assets/global/portraits/5.jpg" alt="...">
+                  <i></i>
+                </span>
+              </a>
+              <div class="dropdown-menu" role="menu">
+                <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-user" aria-hidden="true"></i> Profile</a>
+                <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-payment" aria-hidden="true"></i> Billing</a>
+                <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-settings" aria-hidden="true"></i> Settings</a>
+                <div class="dropdown-divider" role="presentation"></div>
+                <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-power" aria-hidden="true"></i> Logout</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link" data-toggle="dropdown" href="javascript:void(0)" title="Notifications"
+                aria-expanded="false" data-animation="scale-up" role="button">
+                <i class="icon wb-bell" aria-hidden="true"></i>
+                <span class="badge badge-pill badge-danger up">5</span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right dropdown-menu-media" role="menu">
+                <div class="dropdown-menu-header">
+                  <h5>NOTIFICATIONS</h5>
+                  <span class="badge badge-round badge-danger">New 5</span>
+                </div>
+    
+                <div class="list-group">
+                  <div data-role="container">
+                    <div data-role="content">
+                      <a class="list-group-item dropdown-item" href="javascript:void(0)" role="menuitem">
+                        <div class="media">
+                          <div class="pr-10">
+                            <i class="icon wb-order bg-red-600 white icon-circle" aria-hidden="true"></i>
+                          </div>
+                          <div class="media-body">
+                            <h6 class="media-heading">A new order has been placed</h6>
+                            <time class="media-meta" datetime="2018-06-12T20:50:48+08:00">5 hours ago</time>
+                          </div>
+                        </div>
+                      </a>
+                      <a class="list-group-item dropdown-item" href="javascript:void(0)" role="menuitem">
+                        <div class="media">
+                          <div class="pr-10">
+                            <i class="icon wb-user bg-green-600 white icon-circle" aria-hidden="true"></i>
+                          </div>
+                          <div class="media-body">
+                            <h6 class="media-heading">Completed the task</h6>
+                            <time class="media-meta" datetime="2018-06-11T18:29:20+08:00">2 days ago</time>
+                          </div>
+                        </div>
+                      </a>
+                      <a class="list-group-item dropdown-item" href="javascript:void(0)" role="menuitem">
+                        <div class="media">
+                          <div class="pr-10">
+                            <i class="icon wb-settings bg-red-600 white icon-circle" aria-hidden="true"></i>
+                          </div>
+                          <div class="media-body">
+                            <h6 class="media-heading">Settings updated</h6>
+                            <time class="media-meta" datetime="2018-06-11T14:05:00+08:00">2 days ago</time>
+                          </div>
+                        </div>
+                      </a>
+                      <a class="list-group-item dropdown-item" href="javascript:void(0)" role="menuitem">
+                        <div class="media">
+                          <div class="pr-10">
+                            <i class="icon wb-calendar bg-blue-600 white icon-circle" aria-hidden="true"></i>
+                          </div>
+                          <div class="media-body">
+                            <h6 class="media-heading">Event started</h6>
+                            <time class="media-meta" datetime="2018-06-10T13:50:18+08:00">3 days ago</time>
+                          </div>
+                        </div>
+                      </a>
+                      <a class="list-group-item dropdown-item" href="javascript:void(0)" role="menuitem">
+                        <div class="media">
+                          <div class="pr-10">
+                            <i class="icon wb-chat bg-orange-600 white icon-circle" aria-hidden="true"></i>
+                          </div>
+                          <div class="media-body">
+                            <h6 class="media-heading">Message received</h6>
+                            <time class="media-meta" datetime="2018-06-10T12:34:48+08:00">3 days ago</time>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="dropdown-menu-footer">
+                  <a class="dropdown-menu-footer-btn" href="javascript:void(0)" role="button">
+                    <i class="icon wb-settings" aria-hidden="true"></i>
+                  </a>
+                  <a class="dropdown-item" href="javascript:void(0)" role="menuitem">
+                    All notifications
+                  </a>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link" data-toggle="dropdown" href="javascript:void(0)" title="Messages"
+                aria-expanded="false" data-animation="scale-up" role="button">
+                <i class="icon wb-envelope" aria-hidden="true"></i>
+                <span class="badge badge-pill badge-info up">3</span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right dropdown-menu-media" role="menu">
+                <div class="dropdown-menu-header" role="presentation">
+                  <h5>MESSAGES</h5>
+                  <span class="badge badge-round badge-info">New 3</span>
+                </div>
+    
+                <div class="list-group" role="presentation">
+                  <div data-role="container">
+                    <div data-role="content">
+                      <a class="list-group-item" href="javascript:void(0)" role="menuitem">
+                        <div class="media">
+                          <div class="pr-10">
+                            <span class="avatar avatar-sm avatar-online">
+                              <img src="<?php echo base_url(); ?>assets/global/portraits/2.jpg" alt="..." />
+                              <i></i>
+                            </span>
+                          </div>
+                          <div class="media-body">
+                            <h6 class="media-heading">Mary Adams</h6>
+                            <div class="media-meta">
+                              <time datetime="2018-06-17T20:22:05+08:00">30 minutes ago</time>
+                            </div>
+                            <div class="media-detail">Anyways, i would like just do it</div>
+                          </div>
+                        </div>
+                      </a>
+                      <a class="list-group-item" href="javascript:void(0)" role="menuitem">
+                        <div class="media">
+                          <div class="pr-10">
+                            <span class="avatar avatar-sm avatar-off">
+                              <img src="<?php echo base_url(); ?>assets/global/portraits/3.jpg" alt="..." />
+                              <i></i>
+                            </span>
+                          </div>
+                          <div class="media-body">
+                            <h6 class="media-heading">Caleb Richards</h6>
+                            <div class="media-meta">
+                              <time datetime="2018-06-17T12:30:30+08:00">12 hours ago</time>
+                            </div>
+                            <div class="media-detail">I checheck the document. But there seems</div>
+                          </div>
+                        </div>
+                      </a>
+                      <a class="list-group-item" href="javascript:void(0)" role="menuitem">
+                        <div class="media">
+                          <div class="pr-10">
+                            <span class="avatar avatar-sm avatar-busy">
+                              <img src="<?php echo base_url(); ?>assets/global/portraits/4.jpg" alt="..." />
+                              <i></i>
+                            </span>
+                          </div>
+                          <div class="media-body">
+                            <h6 class="media-heading">June Lane</h6>
+                            <div class="media-meta">
+                              <time datetime="2018-06-16T18:38:40+08:00">2 days ago</time>
+                            </div>
+                            <div class="media-detail">Lorem ipsum Id consectetur et minim</div>
+                          </div>
+                        </div>
+                      </a>
+                      <a class="list-group-item" href="javascript:void(0)" role="menuitem">
+                        <div class="media">
+                          <div class="pr-10">
+                            <span class="avatar avatar-sm avatar-away">
+                              <img src="<?php echo base_url(); ?>assets/global/portraits/5.jpg" alt="..." />
+                              <i></i>
+                            </span>
+                          </div>
+                          <div class="media-body">
+                            <h6 class="media-heading">Edward Fletcher</h6>
+                            <div class="media-meta">
+                              <time datetime="2018-06-15T20:34:48+08:00">3 days ago</time>
+                            </div>
+                            <div class="media-detail">Dolor et irure cupidatat commodo nostrud nostrud.</div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="dropdown-menu-footer" role="presentation">
+                  <a class="dropdown-menu-footer-btn" href="javascript:void(0)" role="button">
+                    <i class="icon wb-settings" aria-hidden="true"></i>
+                  </a>
+                  <a class="dropdown-item" href="javascript:void(0)" role="menuitem">
+                    See all messages
+                  </a>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item" id="toggleChat">
+              <a class="nav-link" data-toggle="site-sidebar" href="javascript:void(0)" title="Chat"
+                data-url="../site-sidebar.tpl">
+                <i class="icon wb-chat" aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
+          <!-- End Navbar Toolbar Right -->
+        </div>
+        <!-- End Navbar Collapse -->
+      </div>
+    </nav>
+    <!-- Page -->
+    <div class="page" style="margin-left: 0">
+<!--       <div class="page-header">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+          <li class="breadcrumb-item active">Basic UI</li>
+        </ol>
+        <h1 class="page-title">Carousel</h1>
+        <div class="page-header-actions">
+          <button type="button" class="btn btn-sm btn-icon btn-inverse btn-round" data-toggle="tooltip"
+            data-original-title="Edit">
+            <i class="icon wb-pencil" aria-hidden="true"></i>
+          </button>
+          <button type="button" class="btn btn-sm btn-icon btn-inverse btn-round" data-toggle="tooltip"
+            data-original-title="Refresh">
+            <i class="icon wb-refresh" aria-hidden="true"></i>
+          </button>
+          <button type="button" class="btn btn-sm btn-icon btn-inverse btn-round" data-toggle="tooltip"
+            data-original-title="Setting">
+            <i class="icon wb-settings" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div> -->
+
+      <div class="page-content">
+        <!-- Panel Carousel -->
+        <div class="panel">
+          <!-- <div class="panel-heading">
+            <h3 class="panel-title">Carousel</h3>
+          </div> -->
+          <div class="panel-body container-fluid">
+            <div class="row row-lg">
+              <div class="col-lg-4">
+                <div class="form-group">
+                  <button type="button" class="btn btn-icon btn-block btn-primary btn-outline"><i class="icon wb-plus" aria-hidden="true"></i> Tambah Pelanggan</button>
+                </div>
+              
+                <!-- Site Navbar Seach -->
+                <form role="search">
+                  <div class="form-group">
+                    <div class="input-search">
+                      <i class="input-search-icon wb-search" aria-hidden="true"></i>
+                      <input type="text" class="form-control" name="site-search" placeholder="Search...">
+                    </div>
+                  </div>
+                </form>
+              <!-- End Site Navbar Seach -->
+              <!-- Example Basic -->
+                  <div class="">
+                    <!-- <h4 class="example-title">Basic</h4> -->
+                    <div class="example">
+                      <div class="h-300" data-plugin="scrollable">
+                        <div data-role="container">
+                          <div data-role="content">
+                    <!-- Example Basic -->
+                      <div class="table-responsive">
+                        <table class="table table-hover">
+                          <thead>
+                            <tr>
+                              <th>#</th>
+                              <th>Produk</th>
+                              <th>Qty</th>
+                              <th>Harga Per Item</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>1</td>
+                              <td>Pirelli 250</td>
+                              <td>1</td>
+                              <td>250000</td>
+                            </tr>
+                            <tr>
+                              <td>2</td>
+                              <td>pirelli 400</td>
+                              <td>1</td>
+                              <td>350000</td>
+                            </tr>
+                            <tr>
+                              <td>3</td>
+                              <td>Yamalube</td>
+                              <td>2</td>
+                              <td>35000</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    <!-- End Example Basic -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End Example Basic -->
+                  <div class="row">
+                <div class="col-md-12" style="background-color: #373942;">
+                
+                  <div class="row" style="margin: 0px; font-weight: bold; color: #FFF; padding-top: 5px; font-size: 13px;">
+                    <div class="col-md-12" style="padding-left: 0px; padding-right: 0px;">
+                      <table border="0" style="border-collapse: collapse;" width="100%" height="auto">
+                        <tbody><tr>
+                          <td width="25%" height="25px" style="font-size: 12px;">Total Items :</td>
+                          <td width="25%" height="25px" align="right">
+                            <div id="total_item_qty">0</div>
+                          </td>
+                          <td width="25%" height="25px" align="right">
+                            Total :
+                          </td>
+                          <td width="25%" height="25px" align="right">
+                            <div id="total_price">0.00</div>
+                          </td>
+                        </tr>
+                      </tbody></table>
+                    </div>
+                    <!--
+                    <div class="col-md-4">Total Items : </div>
+                    <div class="col-md-2" style="padding-left: 0px; padding-right: 0px;">
+                      <div id="total_item_qty">0</div>
+                    </div>
+                    <div class="col-md-3" style="text-align: right;">Total : </div>
+                    <div class="col-md-3" style="text-align: right;">
+                      <div id="total_price">0</div>
+                    </div>
+                    -->
+                  </div>
+                
+                  <div class="row" style="margin: 0px; font-weight: bold; color: #FFF; font-size: 13px;">
+                    <div class="col-md-12" style="padding-left: 0px; padding-right: 0px;">
+                      <table border="0" style="border-collapse: collapse;" width="100%" height="auto">
+                        <tbody><tr>
+                          <td width="30%" height="25px">
+                            Dis. Amt./% : 
+                          </td>
+                          <td width="20%" height="25px">
+                            <input type="text" name="dis_amt" id="dis_amt" value="0" style="width: 100%; color: #000; font-size: 13px; font-weight: normal; border: 0px; padding-left: 5px; font-family: Arial, Helvetica, sans-serif; padding-top: 5px; padding-bottom: 5px;" onkeyup="calculateDiscount(this.value)">
+                          </td>
+                          <td width="30%" height="25px" align="right">
+                            Tax (7.00%) :
+                          </td>
+                          <td width="20%" height="25px" align="right">
+                            <div id="display_tax_amt">0.00</div>
+                          </td>
+                        </tr>
+                      </tbody></table>
+                    </div>
+                    <!--
+                    <div class="col-md-4">Disc. Amt. / % : </div>
+                    <div class="col-md-2" style="padding-left: 0px; padding-right: 0px;">
+                      <input type="text" name="dis_amt" id="dis_amt" value="0" style="width: 100%; color: #000; font-size: 13px; font-weight: normal; border: 0px; padding-left: 5px; font-family: Arial, Helvetica, sans-serif; padding-top: 5px; padding-bottom: 5px;" onkeyup="calculateDiscount(this.value)" />
+                    </div>
+                    <div class="col-md-3" style="text-align: right;">Tax (7.00%) : </div>
+                    <div class="col-md-3" style="text-align: right;">
+                      <div id="display_tax_amt">0</div>
+                    </div>
+                    -->
+                  </div>
+                
+                  <div class="row" style="margin: 0px; font-weight: bold; color: #FFF; padding-top: 7px; padding-bottom: 7px; font-size: 13px; border-top: 1px solid #dddddd;">
+                    <div class="col-md-12" style="padding-left: 0px; padding-right: 0px;">
+                      <table border="0" style="border-collapse: collapse;" width="100%" height="auto">
+                        <tbody><tr>
+                          <td width="50%" height="30px">Total Payable :</td>
+                          <td width="50%" height="30px" align="right">
+                            <div id="total_payable">0.00</div>
+                          </td>
+                        </tr>
+                      </tbody></table>
+                    </div>
+                    <!--
+                    <div class="col-md-6">Total Payable : </div>
+                    <div class="col-md-6" style="text-align: right;">
+                      <div id="total_payable">0</div>
+                    </div>
+                    -->
+                  </div>
+                
+                </div>
+              </div>
+              <div class="col-md-12" style="margin-top: 8px;">
+                <div class="form-group">
+                  <button type="button" class="btn btn-icon btn-block btn-danger">Batal</button>
+                  <button type="button" class="btn btn-icon btn-block btn-primary">Pembayaran</button>
+                </div>
+                </div>
+            </div>
+                <div class="col-lg-8">
+                  <!-- Site Navbar Seach -->
+                <form role="search">
+                  <div class="form-group">
+                    <div class="input-search">
+                      <i class="input-search-icon wb-search" aria-hidden="true"></i>
+                      <input type="text" class="form-control" name="site-search" placeholder="Search...">
+                    </div>
+                  </div>
+                </form>
+              <!-- End Site Navbar Seach -->
+                  <!-- Example Data Attribute Settings -->
+                  <div class="">
+                    <!-- <h4 class="example-title">Data Attribute Settings</h4> -->
+                    <div class="">
+                      <div class="slider" id="exampleData" data-slick='{"slidesToShow": 6 , "slidesToScroll": 4}'>
+                        <div>
+                          <!-- <h3>1</h3> -->
+                          <button type="button" class="btn btn-dark ">Filtering1</button>
+                        </div>
+                        <div>
+                          <button type="button" class="btn btn-dark ">Filtering2</button>
+                        </div>
+                        <div>
+                          <!-- <h3>3</h3> -->
+                          <button type="button" class="btn btn-dark">Filtering3</button>
+                        </div>
+                        <div>
+                          <!-- <h3>4</h3> -->
+                          <button type="button" class="btn btn-dark ">Filtering4</button>
+                        </div>
+                        <div>
+                          <!-- <h3>5</h3> -->
+                          <button type="button" class="btn btn-dark ">Filtering5</button>
+                        </div>
+                        <div>
+                          <!-- <h3>6</h3> -->
+                          <button type="button" class="btn btn-dark ">Filtering6</button>
+                        </div>
+                        <div>
+                          <!-- <h3>1</h3> -->
+                          <button type="button" class="btn btn-dark ">Filtering7</button>
+                        </div>
+                        <div>
+                          <button type="button" class="btn btn-dark ">Filtering8</button>
+                        </div>
+                        <div>
+                          <!-- <h3>3</h3> -->
+                          <button type="button" class="btn btn-dark ">Filtering9</button>
+                        </div>
+                        <div>
+                          <!-- <h3>4</h3> -->
+                          <button type="button" class="btn btn-dark ">Filtering10</button>
+                        </div>
+                        <div>
+                          <!-- <h3>5</h3> -->
+                          <button type="button" class="btn btn-dark">Filtering11</button>
+                        </div>
+                        <div>
+                          <!-- <h3>6</h3> -->
+                          <button type="button" class="btn btn-dark">Filtering12</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End Example Data Attribute Settings -->
+                  <!-- Example Basic -->
+                  <div class="example-wrap">
+                    <!-- <h4 class="example-title">Basic</h4> -->
+                    <div class="example">
+                      <div class="h-300" data-plugin="scrollable">
+                        <div data-role="container">
+                          <div data-role="content">
+                            <ul class="blocks blocks-100 blocks-xxl-6 blocks-xl-5 blocks-lg-4 blocks-md-3">
+                              <li>
+                                <button type="button" class="btn btn-icon btn-default">
+                                  <img src="https://png.icons8.com/color/70/000000/small-business.png">
+                                  <h6 class="card-title">Lorem Ipsum Dolor</h6>
+                                  <h7 class="card-title">Dolor</h7>
+                                </button>
+                              </li>
+                              <li>
+                                <button type="button" class="btn btn-icon btn-default">
+                                  <img src="https://png.icons8.com/color/70/000000/small-business.png">
+                                  <h6 class="card-title">Lorem Ipsum Dolor</h6>
+                                  <h7 class="card-title">Dolor</h7>
+                                </button>
+                              </li>
+                              <li>
+                                <button type="button" class="btn btn-icon btn-default">
+                                  <img src="https://png.icons8.com/color/70/000000/small-business.png">
+                                  <h6 class="card-title">Lorem Ipsum Dolor</h6>
+                                  <h7 class="card-title">Dolor</h7>
+                                </button>
+                              </li>
+                              <li>
+                                <button type="button" class="btn btn-icon btn-default">
+                                  <img src="https://png.icons8.com/color/70/000000/small-business.png">
+                                  <h6 class="card-title">Lorem Ipsum Dolor</h6>
+                                  <h7 class="card-title">Dolor</h7>
+                                </button>
+                              </li>
+                              <li>
+                                <button type="button" class="btn btn-icon btn-default">
+                                  <img src="https://png.icons8.com/color/70/000000/small-business.png">
+                                  <h6 class="card-title">Lorem Ipsum Dolor</h6>
+                                  <h7 class="card-title">Dolor</h7>
+                                </button>
+                              </li>
+                              <li>
+                                <button type="button" class="btn btn-icon btn-default">
+                                  <img src="https://png.icons8.com/color/70/000000/small-business.png">
+                                  <h6 class="card-title">Lorem Ipsum Dolor</h6>
+                                  <h7 class="card-title">Dolor</h7>
+                                </button>
+                              </li>
+                              <li>
+                                <button type="button" class="btn btn-icon btn-default">
+                                  <img src="https://png.icons8.com/color/70/000000/small-business.png">
+                                  <h6 class="card-title">Lorem Ipsum Dolor</h6>
+                                  <h7 class="card-title">Dolor</h7>
+                                </button>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End Example Basic -->
+                </div>
+              </div>
+            </div>
+        <!-- End Panel -->
+          </div>
+       </div>
+    <!-- End Page -->
+
+
+    <!-- Footer -->
+    <footer class="site-footer" style="margin-left: 0">
+      <div class="site-footer-legal">© 2018 <a href="http://themeforest.net/item/remark-responsive-bootstrap-admin-template/11989202">Remark</a></div>
+      <div class="site-footer-right">
+        Crafted with <i class="red-600 wb wb-heart"></i> by <a href="https://themeforest.net/user/creation-studio">Creation Studio</a>
+      </div>
+    </footer>
+    <!-- Core  -->
+    <script src="<?php echo base_url(); ?>assets/global/vendor/babel-external-helpers/babel-external-helpers.js"></script>
+    <script src="<?php echo base_url(); ?>assets/global/vendor/jquery/jquery.js"></script>
+    <script src="<?php echo base_url(); ?>assets/global/vendor/popper-js/umd/popper.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/global/vendor/bootstrap/bootstrap.js"></script>
+    <script src="<?php echo base_url(); ?>assets/global/vendor/animsition/animsition.js"></script>
+    <script src="<?php echo base_url(); ?>assets/global/vendor/mousewheel/jquery.mousewheel.js"></script>
+    <script src="<?php echo base_url(); ?>assets/global/vendor/asscrollbar/jquery-asScrollbar.js"></script>
+    <script src="<?php echo base_url(); ?>assets/global/vendor/asscrollable/jquery-asScrollable.js"></script>
+    <script src="<?php echo base_url(); ?>assets/global/vendor/ashoverscroll/jquery-asHoverScroll.js"></script>
+    
+    <!-- Plugins -->
+    <script src="<?php echo base_url(); ?>assets/global/vendor/switchery/switchery.js"></script>
+    <script src="<?php echo base_url(); ?>assets/global/vendor/intro-js/intro.js"></script>
+    <script src="<?php echo base_url(); ?>assets/global/vendor/screenfull/screenfull.js"></script>
+    <script src="<?php echo base_url(); ?>assets/global/vendor/slidepanel/jquery-slidePanel.js"></script>
+        <script src="<?php echo base_url(); ?>assets/global/vendor/owl-carousel/owl.carousel.js"></script>
+        <script src="<?php echo base_url(); ?>assets/global/vendor/slick-carousel/slick.js"></script>
+    
+    <!-- Scripts -->
+    <script src="<?php echo base_url(); ?>assets/global/js/Component.js"></script>
+    <script src="<?php echo base_url(); ?>assets/global/js/Plugin.js"></script>
+    <script src="<?php echo base_url(); ?>assets/global/js/Base.js"></script>
+    <script src="<?php echo base_url(); ?>assets/global/js/Config.js"></script>
+    
+    <script src="<?php echo base_url(); ?>assets/base/assets/js/Section/Menubar.js"></script>
+    <script src="<?php echo base_url(); ?>assets/base/assets/js/Section/GridMenu.js"></script>
+    <script src="<?php echo base_url(); ?>assets/base/assets/js/Section/Sidebar.js"></script>
+    <script src="<?php echo base_url(); ?>assets/base/assets/js/Section/PageAside.js"></script>
+    <script src="<?php echo base_url(); ?>assets/base/assets/js/Plugin/menu.js"></script>
+    
+    <script src="<?php echo base_url(); ?>assets/global/js/config/colors.js"></script>
+    <script src="<?php echo base_url(); ?>assets/base/assets/js/config/tour.js"></script>
+    <script>Config.set('assets', '<?php echo base_url(); ?>assets/base/assets');</script>
+    
+    <!-- Page -->
+    <script src="<?php echo base_url(); ?>assets/base/assets/js/Site.js"></script>
+    <script src="<?php echo base_url(); ?>assets/global/js/Plugin/asscrollable.js"></script>
+    <script src="<?php echo base_url(); ?>assets/global/js/Plugin/slidepanel.js"></script>
+    <script src="<?php echo base_url(); ?>assets/global/js/Plugin/switchery.js"></script>
+        <script src="<?php echo base_url(); ?>assets/global/js/Plugin/owl-carousel.js"></script>
+    
+        <script src="<?php echo base_url(); ?>assets/base/assets/examples/js/uikit/carousel.js"></script>
+        <script src="<?php echo base_url(); ?>assets/global/js/Plugin/asscrollable.js"></script>
+    
+        <script src="<?php echo base_url(); ?>assets/base/assets/examples/js/advanced/scrollable.js"></script>
+  </body>
+</html>
