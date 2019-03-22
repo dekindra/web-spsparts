@@ -83,7 +83,7 @@ class Return_model extends CI_Model {
 
         $this->db->join('inventory', 'inventory.id_p = produk.id_p');
         $this->db->join('kategori_produk', 'kategori_produk.id_kp = produk.category');
-        $this->db->where('inventory.id_gudang', $id);
+        $this->db->where('inventory.id_bengkel', $id);
         $query = $this->db->get('produk');
         $result = $query->result();
         $this->db->save_queries = false;
@@ -311,6 +311,32 @@ class Return_model extends CI_Model {
        
         $query = $this->db->get('retur');
         $result = $query->row();
+        $this->db->save_queries = false;
+
+        return $result;
+    }
+
+     public function getDtProdukGudang($cari, $id)
+    {   
+        // hilangkan spasi kiri dan kanan
+        $keyword = trim($cari);
+
+        // // pisahkan dan hitung jumlah keyword
+        $pisah_kata = explode(" ", $keyword);
+        $jumlah_kata = (integer)count($pisah_kata);
+        $jml_kata = $jumlah_kata - 1;
+
+        foreach ($pisah_kata as $jml) {
+            $this->db->like('searchdeskripsi', $jml);
+        }
+
+        // $this->db->like('searchdeskripsi', $cari);
+
+        $this->db->join('inventory', 'inventory.id_p = produk.id_p');
+        $this->db->join('kategori_produk', 'kategori_produk.id_kp = produk.category');
+        $this->db->where('inventory.id_gudang', $id);
+        $query = $this->db->get('produk');
+        $result = $query->result();
         $this->db->save_queries = false;
 
         return $result;

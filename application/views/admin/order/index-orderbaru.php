@@ -397,9 +397,14 @@ function formatRP($angka){
             $('#harga_produk' + (currentId + 1)).val(ui.item.data.price * (100 - ui.item.data.het_bengkel)/100);
             $('#kode' + (currentId + 1)).val(ui.item.data.id);
             $("#autocomplete" + (currentId + 1)).val(ui.item.data.code);
+            // reset input text
+            $('#sub_total'+(currentId + 1)).val('0')
+            $('#quantity'+(currentId + 1)).val('')
+            // end reset input text
             return false;
           },
         });
+
 
         $("#autocomplete"+ (currentId + 1)).autocomplete("option" , "appendTo", ".formmodaltambah")
 

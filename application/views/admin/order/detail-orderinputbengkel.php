@@ -91,7 +91,7 @@ function formatRP($angka){
                     <tr>
                       <td><?php echo $i; ?></td>
                       <td class=""><?php echo $d -> name_p; ?></td>
-                      <td class="">Rp. <?php echo formatRP(($d -> purchase_price *( 100 - $d-> het_bengkel))/100); ?></td>
+                      <td class="">Rp. <?php echo formatRP($d -> subtotal / $d -> qty); ?></td>
                       <td class=""><?php echo $d -> qty; ?></td>
                       <td class="">Rp. <?php echo formatRP($d -> subtotal); ?></td>
                       <?php if($data["status_order"]>0) :?>

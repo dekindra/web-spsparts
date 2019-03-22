@@ -480,7 +480,7 @@ class Returngudang extends CI_Controller {
         $outlet_id = $this->session->userdata('outlet_id');
         // Cari Nama
         // $data = $this->db->from('produk')->like('name_p',$cari)->get();
-        $data = $this->Return_model->getDtProduk($cari, $outlet_id);
+        $data = $this->Return_model->getDtProdukGudang($cari, $outlet_id);
         // Inisialisasi Array
 
         $arrays = array();

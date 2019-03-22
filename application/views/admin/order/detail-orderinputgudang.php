@@ -91,12 +91,12 @@ function formatRP($angka){
                     <tr>
                       <td><?php echo $i; ?></td>
                       <td class=""><?php echo $d -> name_p; ?></td>
-                      <td class="">Rp. <?php echo formatRP(($d -> purchase_price *( 100 - $d-> het_gudang))/100); ?></td>
+                      <td class="">Rp. <?php echo formatRP($d -> subtotal / $d-> qty); ?></td>
                       <td class=""><?php echo $d -> qty; ?></td>
                       <td class="">Rp. <?php echo formatRP($d -> subtotal); ?></td>
                       <?php if($data["status_order"]>0) :?>
                       <input type="hidden" name="id[]" value="<?php echo $d -> id_p ?>">
-                      <input type="hidden" name="harga[]" value="<?php echo ($d -> purchase_price *( 100 - $d-> het_gudang))/100 ?>">
+                      <input type="hidden" name="harga[]" value="<?php echo ($d -> subtotal / $d-> qty) ?>">
                       <td><input type="text" class="form-control" style="max-width: 75px" name="qtyditerima[]" value="<?php echo $d -> qtyditerima ?>"></td>
                       <?php endif ?>
                     </tr> 
