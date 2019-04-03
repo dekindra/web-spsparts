@@ -2,12 +2,14 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Produk extends CI_Controller {
+    private $filename = "import_data"; // Kita tentukan nama filenya
 
 	public function __construct()
 	{
 		parent::__construct();
 		//Load Dependencies
         $this->load->model('Constant_model');
+        $this->load->model('Produk_model');
         $this->load->model('Notifikasi_model');
         $this->load->model('Setting_model');
 
@@ -39,6 +41,7 @@ class Produk extends CI_Controller {
                 6 => 'assets/base/assets/examples/css/tables/datatable', //datatable ..
                 7 => 'assets/base/assets/examples/css/forms/masks', //mask
                 8 => 'assets/global/fonts/font-awesome/font-awesome', //font
+                9 => 'assets/global/vendor/dropify/dropify', //font
             ),
             // 'jscss' => array(
             //     1 => 'asset/bower_components/jquery/dist/jquery.min',
@@ -64,7 +67,9 @@ class Produk extends CI_Controller {
                 17 => 'assets/global/js/Plugin/material', //material
                 18 => 'assets/global/js/Plugin/datatables', //datatable
                 19 => 'assets/base/assets/examples/js/tables/datatable', //datatable
-                20 => 'assets/global/js/Plugin/formatter' //mask
+                20 => 'assets/global/js/Plugin/formatter', //mask
+                21 => 'assets/global/vendor/dropify/dropify.min',
+                22 => 'assets/global/js/Plugin/dropify',
             )
         );
         return $data;
@@ -273,6 +278,90 @@ class Produk extends CI_Controller {
             );
         }
         echo json_encode($arrays);
+    }
+
+    public function importproduk(){
+        $tm = date('Y-m-d H:i:s', time());
+
+        $upload = $this->Produk_model->upload_file($this->filename);
+
+        if($upload['result'] == "success"){ // Jika proses upload sukses
+            // Load plugin PHPExcel nya
+            include APPPATH.'third_party/PHPExcel/PHPExcel.php';
+            
+            $excelreader = new PHPExcel_Reader_Excel2007();
+            $loadexcel = $excelreader->load('excel/'.$this->filename.'.xlsx'); // Load file yang tadi diupload ke folder excel
+            $sheet = $loadexcel->getActiveSheet()->toArray(null, true, true ,true, true, true , true, true, true);
+            
+            // Masukan variabel $sheet ke dalam array data yang nantinya akan di kirim ke file form.php
+            // Variabel $sheet tersebut berisi data-data yang sudah diinput di dalam excel yang sudha di upload sebelumnya
+            // $data['sheet'] = $sheet;
+
+            // var_dump($sheet[2]['A']);
+            // die();
+            
+            foreach($sheet as $row => $key){
+                // var_dump($row);
+                if ($row > 1) {
+                    // var_dump($key['A']);
+                    $cek = $this->Produk_model->cekdata($key['A']);
+
+                    if ($cek) {
+                        $data = array(
+                            'name_p'            => $key['B'], // Insert data nama dari kolom B di excel
+                            'category'          => $key['C'], // Insert data alamat dari kolom C di excel
+                            'deskripsi'         => $key['D'], // Insert data jenis kelamin dari kolom D di excel
+                            'purchase_price'    => $key['E'], // Insert data alamat dari kolom E di excel
+                            'isi'               => $key['F'], // Insert data alamat dari kolom F di excel
+                            'satuan'            => $key['G'], // Insert data alamat dari kolom G di excel
+                            'merk'              => $key['I'], // Insert data jenis kelamin dari kolom I di excel
+                            'searchdeskripsi'   => $key['A'].' '.$key['B'].' '.$key['I'].' '.$key['D'].' '.$key['H'], // Insert data alamat dari kolom A,B,I,D,H di excel
+                            'created_user_id'   => $this->session->userdata('id'),
+                            'created_datetime'  => $tm,
+                            'updated_user_id'   => '0',
+                            'updated_datetime'  => $tm,
+                            'status'            => '1',
+                        );
+
+                        $this->Produk_model->updateData($key['A'], $data);
+                    } else {
+                        $data = array(
+                            'code_p'            => $key['A'], // Insert data alamat dari kolom A di excel
+                            'name_p'            => $key['B'], // Insert data nama dari kolom B di excel
+                            'category'          => $key['C'], // Insert data alamat dari kolom C di excel
+                            'deskripsi'         => $key['D'], // Insert data jenis kelamin dari kolom D di excel
+                            'purchase_price'    => $key['E'], // Insert data alamat dari kolom E di excel
+                            'isi'               => $key['F'], // Insert data alamat dari kolom F di excel
+                            'satuan'            => $key['G'], // Insert data alamat dari kolom G di excel
+                            'merk'              => $key['I'], // Insert data jenis kelamin dari kolom I di excel
+                            'searchdeskripsi'   => $key['A'].' '.$key['B'].' '.$key['I'].' '.$key['D'].' '.$key['H'], // Insert data alamat dari kolom A,B,I,D,H di excel
+                            'created_user_id'   => $this->session->userdata('id'),
+                            'created_datetime'  => $tm,
+                            'updated_user_id'   => '0',
+                            'updated_datetime'  => $tm,
+                            'status'            => '1',
+                        );
+
+                        $this->Produk_model->insertData($data);
+                    }
+                    
+                }
+            } 
+
+            echo json_encode(array(
+                "status"        => TRUE,
+                "flash_header"  => 'Tambah Produk',
+                "flash_desc"    => 'Berhasil import produk',
+            ));
+
+        }else{ // Jika proses upload gagal
+            echo json_encode(array(
+               "status"         => FALSE,
+                "flash_header"  => 'Tambah Produk',
+                "flash_desc"    => 'Gagal import produk',
+            ));
+        }
+
     }
 
 }

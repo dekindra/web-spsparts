@@ -158,158 +158,197 @@ function formatRP($angka){
         <!-- End Panel Table Tools -->
       </div>
 
-<!-- Modal -->
-                    <div class="modal fade modal-fade-in-scale-up" id="exampleNiftyFadeScale" aria-hidden="true"
-                      aria-labelledby="exampleModalTitle" role="dialog" tabindex="-1">
-                      <div class="modal-dialog modal-simple">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                              <span aria-hidden="true">×</span>
-                            </button>
-                            <h4 class="modal-title">Tambah Produk</h4>
+      <!-- Modal -->
+      <div class="modal fade modal-fade-in-scale-up" id="exampleNiftyFadeScale" aria-hidden="true"
+        aria-labelledby="exampleModalTitle" role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-simple">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+              </button>
+              <h4 class="modal-title">Tambah Produk</h4>
+            </div>
+            <div class="modal-body">
+                <!-- <div class="form-group form-material floating" data-plugin="formMaterial">
+                  <input type="text" class="form-control" readonly="" />
+                  <input type="file" name="inputFloatingFile" multiple="" />
+                  <label class="floating-label">Gambar..</label>
+                </div> -->
+                <div class="form-horizontal">
+                  <div class="nav-tabs-horizontal" data-plugin="tabs">
+                    <ul class="nav nav-tabs nav-tabs-line" role="tablist">
+                      <li class="nav-item" role="presentation"><a class="nav-link active" data-toggle="tab" href="#exampleTabsLineOne"
+                          aria-controls="exampleTabsLineOne" role="tab">Input</a></li>
+                      <li class="nav-item" role="presentation"><a class="nav-link" data-toggle="tab" href="#exampleTabsLineTwo"
+                          aria-controls="exampleTabsLineTwo" role="tab">Import</a></li>
+                    </ul>
+                    <div class="tab-content pt-20">
+                      <div class="tab-pane active" id="exampleTabsLineOne" role="tabpanel">
+                      <form autocomplete="off" id="form">
+                        <input type="hidden" name="id">
+                          <div class="form-group form-material" data-plugin="formMaterial">
+                            <input type="text" class="form-control" name="kode" data-hint="Masukkan Kode Barang"
+                            />
+                            <label class="floating-label">Kode</label>
                           </div>
-                          <div class="modal-body">
-                            <form autocomplete="off" id="form">
-                              <input type="hidden" name="id">
+                          <div class="row">
+                            <div class="col-md-6">
                               <div class="form-group form-material" data-plugin="formMaterial">
-                                <input type="text" class="form-control" name="kode" data-hint="Masukkan Kode Barang"
+                                <input type="text" class="form-control" name="nama" data-hint="Masukkan Nama Barang"/>
+                                <label class="floating-label">Nama</label>
+                              </div>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="form-group form-material" data-plugin="formMaterial">
+                                <input type="text" class="form-control" name="merk" data-hint="Masukkan Merk Barang"
                                 />
-                                <label class="floating-label">Kode</label>
+                                <label class="floating-label">Merk</label>
                               </div>
-                              <div class="row">
-                                <div class="col-md-6">
-                                  <div class="form-group form-material" data-plugin="formMaterial">
-                                    <input type="text" class="form-control" name="nama" data-hint="Masukkan Nama Barang"/>
-                                    <label class="floating-label">Nama</label>
-                                  </div>
-                                </div>
-                                <div class="col-md-6">
-                                  <div class="form-group form-material" data-plugin="formMaterial">
-                                    <input type="text" class="form-control" name="merk" data-hint="Masukkan Merk Barang"
-                                    />
-                                    <label class="floating-label">Merk</label>
-                                  </div>
-                                </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-6">
+                              <div class="form-group form-material" data-plugin="formMaterial">
+                                <input type="text" class="form-control" name="deskripsi" data-hint="Masukkan Deskripsi Barang"/>
+                                <label class="floating-label">Deskripsi</label>
                               </div>
-                              <div class="row">
-                                <div class="col-md-6">
-                                  <div class="form-group form-material" data-plugin="formMaterial">
-                                    <input type="text" class="form-control" name="deskripsi" data-hint="Masukkan Deskripsi Barang"/>
-                                    <label class="floating-label">Deskripsi</label>
-                                  </div>
-                                </div>
-                                <div class="col-md-6">
-                                  <div class="form-group form-material" data-plugin="formMaterial">
-                                    <select class="form-control" name="kategori">
-                                      <option>&nbsp;</option>
-                                      <?php foreach ($kategoris as $ks) { ?>
-                                         <option value="<?php echo $ks->id_kp; ?>"><?php echo $ks->name_kp; ?></option>
-                                      <?php } ?>
-                                    </select>
-                                    <label class="floating-label">Kategori</label>
-                                  </div>
-                                </div>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="form-group form-material" data-plugin="formMaterial">
+                                <select class="form-control" name="kategori">
+                                  <option>&nbsp;</option>
+                                  <?php foreach ($kategoris as $ks) { ?>
+                                     <option value="<?php echo $ks->id_kp; ?>"><?php echo $ks->name_kp; ?></option>
+                                  <?php } ?>
+                                </select>
+                                <label class="floating-label">Kategori</label>
                               </div>
-                              <!-- <div class="form-group form-material floating" data-plugin="formMaterial">
+                            </div>
+                          </div>
+                          <!-- <div class="form-group form-material floating" data-plugin="formMaterial">
+                            <div class="input-group">
+                              <span class="input-group-addon">Rp.</span>
+                              <div class="form-control-wrap">
+                                <input type="text" class="form-control" name="beli" data-hint="Masukkan Harga Beli Barang" />
+                                <label class="floating-label">Harga Beli</label>
+                              </div>
+                            </div>
+                          </div> -->
+                          <!-- <div class="form-group form-material">
+                            <label class="form-control-label">Diskon Pembelian</label>
+                              <input type="text" class="form-control" id="inputPercent" name="diskon" data-plugin="formatter"
+                                data-pattern="[[99]].[[99]]%" />
+                              <p class="text-help">99.99%</p>
+                          </div> -->
+                          <br>
+                          <div class="row">
+                            <div class="col-md-6">
+                              <div class="form-group form-material" data-plugin="formMaterial">
                                 <div class="input-group">
                                   <span class="input-group-addon">Rp.</span>
                                   <div class="form-control-wrap">
-                                    <input type="text" class="form-control" name="beli" data-hint="Masukkan Harga Beli Barang" />
-                                    <label class="floating-label">Harga Beli</label>
+                                    <input type="text" class="form-control" name="beli" data-hint="Masukkan Harga Jual Barang" />
+                                    <input type="hidden" name="hetgudang">
+                                    <input type="hidden" name="het_bengkel">
+                                    <label class="floating-label">Harga Eceran Tertinggi</label>
                                   </div>
                                 </div>
-                              </div> -->
-                              <!-- <div class="form-group form-material">
-                                <label class="form-control-label">Diskon Pembelian</label>
-                                  <input type="text" class="form-control" id="inputPercent" name="diskon" data-plugin="formatter"
+                              </div>
+                            </div>
+                            <div class="col-md-3">
+                              <div class="form-group form-material" data-plugin="formMaterial">
+                                <input type="text" class="form-control" name="isi" data-hint="Masukkan Nama Barang"/>
+                                <label class="floating-label">Isi</label>
+                              </div>
+                            </div>
+                            <div class="col-md-3">
+                              <div class="form-group form-material" data-plugin="formMaterial">
+                                <select class="form-control" name="satuan">
+                                  <option>&nbsp;</option>
+                                  <option value="SET">SET</option>
+                                  <option value="PCS">PCS</option>
+                                </select>
+                                <label class="floating-label">Satuan</label>
+                              </div>
+                            </div>
+                          </div>
+                          
+                          <!-- <div class="row">
+                            <div class="col-md-6">
+                              <div class="form-group form-material">
+                                <label class="form-control-label">% HET Gudang</label>
+                                  <input type="text" class="form-control" id="inputPercent" name="hetgudang" data-plugin="formatter"
                                     data-pattern="[[99]].[[99]]%" />
                                   <p class="text-help">99.99%</p>
-                              </div> -->
-                              <br>
-                              <div class="row">
-                                <div class="col-md-6">
-                                  <div class="form-group form-material" data-plugin="formMaterial">
-                                    <div class="input-group">
-                                      <span class="input-group-addon">Rp.</span>
-                                      <div class="form-control-wrap">
-                                        <input type="text" class="form-control" name="beli" data-hint="Masukkan Harga Jual Barang" />
-                                        <input type="hidden" name="hetgudang">
-                                        <input type="hidden" name="het_bengkel">
-                                        <label class="floating-label">Harga Eceran Tertinggi</label>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="col-md-3">
-                                  <div class="form-group form-material" data-plugin="formMaterial">
-                                    <input type="text" class="form-control" name="isi" data-hint="Masukkan Nama Barang"/>
-                                    <label class="floating-label">Isi</label>
-                                  </div>
-                                </div>
-                                <div class="col-md-3">
-                                  <div class="form-group form-material" data-plugin="formMaterial">
-                                    <select class="form-control" name="satuan">
-                                      <option>&nbsp;</option>
-                                      <option value="SET">SET</option>
-                                      <option value="PCS">PCS</option>
-                                    </select>
-                                    <label class="floating-label">Satuan</label>
-                                  </div>
-                                </div>
                               </div>
-                              
-                              <!-- <div class="row">
-                                <div class="col-md-6">
-                                  <div class="form-group form-material">
-                                    <label class="form-control-label">% HET Gudang</label>
-                                      <input type="text" class="form-control" id="inputPercent" name="hetgudang" data-plugin="formatter"
-                                        data-pattern="[[99]].[[99]]%" />
-                                      <p class="text-help">99.99%</p>
-                                  </div>
-                                </div>
-                                <div class="col-md-6">
-                                  <div class="form-group form-material">
-                                    <label class="form-control-label">% HET Bengkel</label>
-                                      <input type="text" class="form-control" id="inputPercent" name="hetbengkel" data-plugin="formatter"
-                                        data-pattern="[[99]].[[99]]%" />
-                                      <p class="text-help">99.99%</p>
-                                  </div>
-                                </div>
-                              </div> -->
-                              <div class="row">
-                                <div class="col-md-12">
-                                  <div class="" id="photo-preview">
-                                      <label>Photo</label>
-                                      <div class="col-md-12">
-                                          (No photo)
-                                          <span class="help-block"></span>
-                                      </div>
-                                  </div>
-                                </div>
-                                <div class="col-md-12">
-                                  <div class="form-group form-material floating" style="margin-top: 0" data-plugin="formMaterial">
-                                    <input type="text" class="form-control" readonly="" />
-                                    <input type="file" name="thumbnail" multiple="" />
-                                    <label class="floating-label" id="label-photo">Upload Gambar..</label>
-                                  </div>
-                                </div>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="form-group form-material">
+                                <label class="form-control-label">% HET Bengkel</label>
+                                  <input type="text" class="form-control" id="inputPercent" name="hetbengkel" data-plugin="formatter"
+                                    data-pattern="[[99]].[[99]]%" />
+                                  <p class="text-help">99.99%</p>
                               </div>
-                              <!-- <div class="form-group form-material floating" data-plugin="formMaterial">
+                            </div>
+                          </div> -->
+                          <div class="row">
+                            <div class="col-md-12">
+                              <div class="" id="photo-preview">
+                                  <label>Photo</label>
+                                  <div class="col-md-12">
+                                      (No photo)
+                                      <span class="help-block"></span>
+                                  </div>
+                              </div>
+                            </div>
+                            <div class="col-md-12">
+                              <div class="form-group form-material floating" style="margin-top: 0" data-plugin="formMaterial">
                                 <input type="text" class="form-control" readonly="" />
-                                <input type="file" name="inputFloatingFile" multiple="" />
-                                <label class="floating-label">Gambar..</label>
-                              </div> -->
-                            </form>
+                                <input type="file" name="thumbnail" multiple="" />
+                                <label class="floating-label" id="label-photo">Upload Gambar..</label>
+                              </div>
+                            </div>
                           </div>
-                          <div class="modal-footer">
+                          <div class="text-right">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                             <button type="button" id="btnSave" onclick="save()" class="btn btn-primary">Simpan</button>
+                          </div>
+                        </form>
+                      </div>
+                      <div class="tab-pane" id="exampleTabsLineTwo" role="tabpanel">
+                        <div class="text-center">
+                          <div class="row">
+                            <div class="col-md-12">
+                              <div class="mb-15">
+                                <a href="<?php echo base_url("excel/format.xlsx"); ?>">
+                                <button id="" class="btn btn-outline btn-warning"><i class="icon fa-download" aria-hidden="true"></i> Download Format Produk</button></a>  
+                              </div>
+                              <form autocomplete="off" id="formimport">
+                                <div class="mb-15">
+                                  <input type="file" name="importproduk" id="input-file-now" data-plugin="dropify" data-allowed-file-extensions="xlsx"  data-default-file="" required="required" />
+                                </div>
+                                <div>
+                                  <button type="button" onclick="import_produk()" class="btn btn-outline btn-primary"><i class="icon fa-upload" aria-hidden="true"></i> Import Produk</button>  
+                                </div>
+                              </form>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <!-- End Modal -->
+                  </div>
+                </div>
+              
+            </div>
+            <!-- <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" id="btnSave" onclick="save()" class="btn btn-primary">Simpan</button>
+            </div> -->
+          </div>
+        </div>
+      </div>
+      <!-- End Modal -->
 
 
 
@@ -514,6 +553,65 @@ function delete_account(id)
         });
 
     }
+}
+
+function import_produk()
+{
+    var url;
+
+    url = "<?php echo site_url('produk/importproduk')?>";
+
+    // ajax adding data to database
+
+    var formData = new FormData($('#formimport')[0]);
+    $.ajax({
+        url : url,
+        type: "POST",
+        data: formData,
+        contentType: false,
+        processData: false,
+        dataType: "JSON",
+        success: function(data)
+        { 
+
+            if(data.status) //if success close modal and reload ajax table
+            {
+                $('#exampleNiftyFadeScale').modal('hide');
+
+                var alert = `<div class="alert alert-alt alert-success alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                    ${data.flash_header} <br><a class="alert-link" style="margin-left: 0" href="javascript:void(0)">${data.flash_desc}</a>
+                  </div>`
+
+                  $('.page-header').append(alert)
+                  
+               location.reload();  
+
+
+
+            } else {
+
+              $('#exampleNiftyFadeScale').modal('hide');
+
+               var alertgagal = `<div class="alert alert-alt alert-danger alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                    ${data.flash_header} <br><a class="alert-link" style="margin-left: 0" href="javascript:void(0)">${data.flash_desc}</a>
+                  </div>`
+
+                  $('.page-header').append(alertgagal)
+            }
+
+        },
+        error: function (jqXHR, textStatus, errorThrown)
+        {
+            alert('Error adding / update data');
+
+        }
+    });
 }
 
 </script>
