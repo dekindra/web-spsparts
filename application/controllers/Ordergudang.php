@@ -307,6 +307,44 @@ class Ordergudang extends CI_Controller {
 
     // }
 
+    public function addWishlist()
+    {
+        $tm = date('Y-m-d H:i:s', time());
+        $outlet_id = $this->session->userdata('outlet_id');
+
+        if (!is_null($outlet_id)) {
+        
+            foreach ($_POST['order'] as $id => $detail){
+                if($detail['id_produk']!=''){
+                    $data = array(
+                        'id_p'      => $detail['id_produk'],
+                        'qty'       => $detail['quantity'],
+                        'subtotal'  => $detail['sub_total'],
+                        'type'      => 'gudang',
+                        'id_outlet' => $outlet_id,
+                        'tanggal'   => $tm
+                    );
+
+                    $this->Constant_model->insertData('order_wishlist', $data);
+                }
+            }
+
+            echo json_encode(array(
+                "status" => TRUE,
+                "flash_header"  => 'Tambah Wishlist',
+                "flash_desc"  => 'Berhasil menambah wishlist',
+            ));
+
+        } else {
+            echo json_encode(array(
+                "status" => FALSE,
+                "flash_header"  => 'Tambah Wishlist',
+                "flash_desc"  => 'Gagal Menambah Wishlist',
+            ));
+        }
+  
+    }
+
     
     public function detailKeluar($id)
     {

@@ -471,6 +471,11 @@
                       <span class="site-menu-title">Return Order</span>
                     </a>
                   </li>
+                  <li <?php if($menu =='wishlistbengkel'){echo 'class="site-menu-item active"';} else{ echo 'class="site-menu-item"';} ?>>
+                    <a class="animsition-link" href="<?php echo base_url(); ?>wishlistbengkel">
+                      <span class="site-menu-title">Wishlist Order</span>
+                    </a>
+                  </li>
                 </ul>
               </li>
               <?php endif ?>
@@ -490,6 +495,11 @@
                   <li <?php if($menu =='ordergudangkeluar'){echo 'class="site-menu-item active"';} else{ echo 'class="site-menu-item"';} ?>>
                     <a class="animsition-link" href="<?php echo base_url(); ?>ordergudang/keluar">
                       <span class="site-menu-title">Order</span>
+                    </a>
+                  </li>
+                  <li <?php if($menu =='wishlistgudang'){echo 'class="site-menu-item active"';} else{ echo 'class="site-menu-item"';} ?>>
+                    <a class="animsition-link" href="<?php echo base_url(); ?>wishlistgudang">
+                      <span class="site-menu-title">Wishlist Order</span>
                     </a>
                   </li>
                   <li <?php if($menu =='returngudangmasuk'){echo 'class="site-menu-item active"';} else{ echo 'class="site-menu-item"';} ?>>

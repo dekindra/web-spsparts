@@ -168,6 +168,7 @@ function formatRP($angka){
                                   <div class="modal-footer">
                                     <button type="button" class="btn btn-default" id="tambah">Baris Baru</button>
                                     <button type="button" id="btnSave" onclick="save()" class="btn btn-primary">Simpan</button>
+                                    <button type="button" id="btnWishlist" onclick="wishlist()" class="btn btn-warning"><i class="icon fa-heart-o" aria-hidden="true"></i> Wishlist</button>
                                   </div>
                                 </form>
                               </div>
@@ -505,6 +506,70 @@ function formatRP($angka){
           error: function (jqXHR, textStatus, errorThrown)
           {
             location.reload();
+
+          }
+        });
+  }
+
+  function wishlist()
+  {
+    // $('[name="nipy"]').removeAttr("disabled");
+    $('#btnWishlist').text('saving...'); //change button text
+    $('#btnWishlist').attr('disabled',true); //set button disable 
+    var url;
+
+    url = "<?php echo site_url('orderbengkel/addWishlist')?>";
+
+    // ajax adding data to database
+
+    var formData = new FormData($('#form')[0]);
+    $.ajax({
+      url : url,
+      type: "POST",
+      data: formData,
+      contentType: false,
+      processData: false,
+      dataType: "JSON",
+      success: function(data)
+      {
+
+            if(data.status) //if success close modal and reload ajax table
+            {
+                $('#exampleNiftyFadeScale').modal('hide');
+
+                var alert = `<div class="alert alert-alt alert-success alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                    ${data.flash_header} <br><a class="alert-link" style="margin-left: 0" href="javascript:void(0)">${data.flash_desc}</a>
+                  </div>`
+
+                  $('.page-header').append(alert)
+                  
+               location.reload();  
+
+            } else {
+
+              $('#exampleNiftyFadeScale').modal('hide');
+
+               var alertgagal = `<div class="alert alert-alt alert-danger alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                    ${data.flash_header} <br><a class="alert-link" style="margin-left: 0" href="javascript:void(0)">${data.flash_desc}</a>
+                  </div>`
+
+                  $('.page-header').append(alertgagal)
+            }
+
+
+            $('#btnWishlist').text('save'); //change button text
+            $('#btnWishlist').attr('disabled',false); //set button enable 
+
+          },
+          error: function (jqXHR, textStatus, errorThrown)
+          {
+            // location.reload();
 
           }
         });

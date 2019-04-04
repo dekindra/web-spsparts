@@ -72,82 +72,83 @@
                     <div class="col-md-6">
                       <!-- Panel Floating Labels -->
                       <!-- <div class="panel"> -->
-                                    <!-- <div class="panel-heading">
-                                      <h3 class="panel-title">Total</h3>
-                                    </div> -->
-                                    <!-- <div class="panel-body container-fluid"> -->
-                                        <!-- <div class="form-group form-material" data-plugin="formMaterial">
-                                          <div class="input-group">
-                                            <span class="input-group-addon" style="color: red; font-size: 30px;" >Rp</span>
-                                            <div class="form-control-wrap">
-                                              <label class="">Total Order</label>
-                                              <input id="rupiah" type="hidden" class="form-control" /><br>
-                                              <span class="tampilTotalBeli"></span></b>
-                                            </div>
-                                          </div>
-                                        </div> -->
-                                        <label for=""><b>TOTAL PEMBELIAN</b></label>
-                                        <input id="rupiah" type="hidden" name="total_pembelian" class="form-control"><br>
-                                        <b style="color: red; font-size: 30px;">Rp <span class="tampilTotalBeli"></span></b>
-                                        <br>
-                                        <label for=""><b>Maksimal Order adalah senilai </b><span class="badge badge-lg badge-warning">Rp <?php echo formatRP($limitorder["limit_order"]); ?></span></label>
-
-                                        <!-- </div> -->
-                                        <!-- </div> -->
-                                        <!-- End Panel Floating Labels -->
-                                      </div>
-                                    </div>
-                                    <!-- Panel Table Tools -->
-                                    <!-- <div class="panel"> -->
-                                      <header class="panel-heading">
-                                        <h3 class="panel-title">Tambah Pembelian</h3>
-                                      </header>
-                                      <!-- <div class="panel-body"> -->
-                                        <div class="table-responsive">
-                                          <table class="table table-hover" id="cart">
-                                            <thead>
-                                              <tr>
-                                                <th>#</th>
-                                                <th>Barang</th>
-                                                <th>Harga</th>
-                                                <th>Qty</th>
-                                                <th>Sub Total</th>
-                                                <th class="text-nowrap">&nbsp;</th>
-                                              </tr>
-                                              <tbody>
-                                                <!-- Dynamic -->
-                                              </tbody>
-                                            </thead>
-                                          </table>
-                                        </div>
-                                  <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Tambah</button>
-                                    <button type="button" class="btn btn-primary">Simpan</button> -->
-                                    <!-- </div> -->
-                                    <!-- </div> -->
-                                  </div>
-                                  <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" id="tambah">Tambah</button>
-                                    <button type="button" id="btnSave" onclick="save()" class="btn btn-primary">Simpan</button>
-                                  </div>
-                                </form>
+                        <!-- <div class="panel-heading">
+                          <h3 class="panel-title">Total</h3>
+                        </div> -->
+                        <!-- <div class="panel-body container-fluid"> -->
+                            <!-- <div class="form-group form-material" data-plugin="formMaterial">
+                              <div class="input-group">
+                                <span class="input-group-addon" style="color: red; font-size: 30px;" >Rp</span>
+                                <div class="form-control-wrap">
+                                  <label class="">Total Order</label>
+                                  <input id="rupiah" type="hidden" class="form-control" /><br>
+                                  <span class="tampilTotalBeli"></span></b>
+                                </div>
                               </div>
-                            </div>
+                            </div> -->
+                            <label for=""><b>TOTAL PEMBELIAN</b></label>
+                            <input id="rupiah" type="hidden" name="total_pembelian" class="form-control"><br>
+                            <b style="color: red; font-size: 30px;">Rp <span class="tampilTotalBeli"></span></b>
+                            <br>
+                            <label for=""><b>Maksimal Order adalah senilai </b><span class="badge badge-lg badge-warning">Rp <?php echo formatRP($limitorder["limit_order"]); ?></span></label>
+
+                            <!-- </div> -->
+                            <!-- </div> -->
+                            <!-- End Panel Floating Labels -->
                           </div>
-                          <!-- End Modal -->
                         </div>
-                        <!-- <table class="table table-hover dataTable table w-full" data-plugin="dataTable"> -->
-                          <table class="table table-hover dataTable table w-full" id="exampleTableTools" >
-                            <thead>
-                              <tr>
-                                <th style="background:  #ececec;">#</th>
-                                <!-- <th style="background:  #ececec;">Kode</th> -->
-                                <th style="background:  #ececec;">Tanggal Order</th>
-                                <th style="background:  #ececec;">Total Pembelian</th>
-                                <th style="background:  #ececec;">Status</th>
-                                <th class="text-nowrap" style="background:  #ececec;">Action</th>
-                              </tr>
-                            </thead>
-                            <tbody>
+                        <!-- Panel Table Tools -->
+                        <!-- <div class="panel"> -->
+                          <header class="panel-heading">
+                            <h3 class="panel-title">Tambah Pembelian</h3>
+                          </header>
+                          <!-- <div class="panel-body"> -->
+                            <div class="table-responsive">
+                              <table class="table table-hover" id="cart">
+                                <thead>
+                                  <tr>
+                                    <th>#</th>
+                                    <th>Barang</th>
+                                    <th>Harga</th>
+                                    <th>Qty</th>
+                                    <th>Sub Total</th>
+                                    <th class="text-nowrap">&nbsp;</th>
+                                  </tr>
+                                  <tbody>
+                                    <!-- Dynamic -->
+                                  </tbody>
+                                </thead>
+                              </table>
+                            </div>
+                      <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Tambah</button>
+                        <button type="button" class="btn btn-primary">Simpan</button> -->
+                        <!-- </div> -->
+                        <!-- </div> -->
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" id="tambah">Tambah</button>
+                        <button type="button" id="btnSave" onclick="save()" class="btn btn-primary">Simpan</button>
+                        <button type="button" id="btnWishlist" onclick="wishlist()" class="btn btn-warning"><i class="icon fa-heart-o" aria-hidden="true"></i> Wishlist</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <!-- End Modal -->
+            </div>
+            <!-- <table class="table table-hover dataTable table w-full" data-plugin="dataTable"> -->
+              <table class="table table-hover dataTable table w-full" id="exampleTableTools" >
+                <thead>
+                  <tr>
+                    <th style="background:  #ececec;">#</th>
+                    <!-- <th style="background:  #ececec;">Kode</th> -->
+                    <th style="background:  #ececec;">Tanggal Order</th>
+                    <th style="background:  #ececec;">Total Pembelian</th>
+                    <th style="background:  #ececec;">Status</th>
+                    <th class="text-nowrap" style="background:  #ececec;">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
                 <!-- <tr>
                   <td>2805001</td>
                   <td>2018-05-28</td>
@@ -197,22 +198,22 @@
                       <button type="button" class="btn btn-sm btn-icon btn-primary btn-outline" data-toggle="tooltip"
                       data-original-title="Detail" onclick="detail_account(<?php echo $ok->id_order; ?>)">
                       <i class="icon wb-info-circle" aria-hidden="true"></i>
-                    </button>
-                    <button type="button" class="btn btn-sm btn-icon btn-danger btn-outline" data-toggle="tooltip"
-                    data-original-title="Delete" onclick="delete_account(<?php echo $ok->id_order; ?>)">
-                    <i class="icon wb-close" aria-hidden="true"></i>
-                  </button>
-                  <!-- <div class="btn-group" role="group">
-                    <button type="button" class="btn  btn-sm btn-warning dropdown-toggle" id="exampleIconDropdown2"
-                    data-toggle="dropdown" aria-expanded="false">
-                    <i class="icon wb-edit" aria-hidden="true"></i>
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="exampleIconDropdown2" role="menu">
-                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem">Diterima</a>
-                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem">Dikirim</a>
-                      <a class="dropdown-item" href="javascript:void(0)" role="menuitem">Selesai</a>
-                    </div>
-                  </div> -->
+                      </button>
+                      <button type="button" class="btn btn-sm btn-icon btn-danger btn-outline" data-toggle="tooltip"
+                      data-original-title="Delete" onclick="delete_account(<?php echo $ok->id_order; ?>)">
+                      <i class="icon wb-close" aria-hidden="true"></i>
+                      </button>
+                      <!-- <div class="btn-group" role="group">
+                        <button type="button" class="btn  btn-sm btn-warning dropdown-toggle" id="exampleIconDropdown2"
+                        data-toggle="dropdown" aria-expanded="false">
+                        <i class="icon wb-edit" aria-hidden="true"></i>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="exampleIconDropdown2" role="menu">
+                          <a class="dropdown-item" href="javascript:void(0)" role="menuitem">Diterima</a>
+                          <a class="dropdown-item" href="javascript:void(0)" role="menuitem">Dikirim</a>
+                          <a class="dropdown-item" href="javascript:void(0)" role="menuitem">Selesai</a>
+                        </div>
+                      </div> -->
                       <!-- <button type="button" class="btn btn-sm btn-icon btn-flat btn-default" data-toggle="tooltip"
                               data-original-title="Kirim" onclick="kirimOrder(<?php echo $ok->id_order; ?>)">
                               <i class="icon wb-check" aria-hidden="true"></i>
@@ -221,357 +222,420 @@
                               data-original-title="Print">
                               <i class="icon wb-print" aria-hidden="true"></i>
                             </button> -->
-                          </td>
-                        </tr> 
-                        <?php  $i++; } ?>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-                <!-- End Panel Table Tools -->
-                <div class="panel">
-                  <header class="panel-heading">
-                    <h3 class="panel-title">Laporan Order</h3>
-                  </header>
-                  <div class="panel-body">
-                    <!-- Example Date Range -->
+                      </td>
+                    </tr> 
+                    <?php  $i++; } ?>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <!-- End Panel Table Tools -->
+            <div class="panel">
+              <header class="panel-heading">
+                <h3 class="panel-title">Laporan Order</h3>
+              </header>
+              <div class="panel-body">
+                <!-- Example Date Range -->
 
-                    <form id="formLapPenjualan">
-                      <div class="row">
-                        <div class="col-md-6">
-                          <label class="form-control-label">Tanggal</label>
-                          <div class="input-daterange form-group form-material" data-plugin="datepicker">
-                            <div class="input-group">
-                              <span class="input-group-addon">
-                                <i class="icon wb-calendar" aria-hidden="true"></i>
-                              </span>
-                                <input type="text" class="form-control" name="start" autocomplete="off" required="required" />
-                            </div>
-                            <div class="input-group">
-                              <span class="input-group-addon">to</span>
-                              <input type="text" class="form-control" name="end" autocomplete="off" required="required" />
-                            </div>
-                          </div>
-                          <br>
-                          <div class="form-group form-material floating" data-plugin="formMaterial">
-                            <select class="form-control" name="status">
-                              <option value="all">Semua</option>
-                              <option value="0">Menunggu</option>
-                              <option value="1">Diproses</option>
-                              <option value="2">Validasi</option>
-                              <option value="3">Selesai</option>
-                            </select>
-                            <label class="floating-label">Status Order</label>
-                          </div>
-
+                <form id="formLapPenjualan">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label class="form-control-label">Tanggal</label>
+                      <div class="input-daterange form-group form-material" data-plugin="datepicker">
+                        <div class="input-group">
+                          <span class="input-group-addon">
+                            <i class="icon wb-calendar" aria-hidden="true"></i>
+                          </span>
+                            <input type="text" class="form-control" name="start" autocomplete="off" required="required" />
+                        </div>
+                        <div class="input-group">
+                          <span class="input-group-addon">to</span>
+                          <input type="text" class="form-control" name="end" autocomplete="off" required="required" />
                         </div>
                       </div>
-                      <button type="submit" class="btn btn-primary">Tampilkan</button>
-                    </form>
+                      <br>
+                      <div class="form-group form-material floating" data-plugin="formMaterial">
+                        <select class="form-control" name="status">
+                          <option value="all">Semua</option>
+                          <option value="0">Menunggu</option>
+                          <option value="1">Diproses</option>
+                          <option value="2">Validasi</option>
+                          <option value="3">Selesai</option>
+                        </select>
+                        <label class="floating-label">Status Order</label>
+                      </div>
+
+                    </div>
                   </div>
-                  <div class="panel-body">
-                      <div id="tampiltable"></div>
-                  </div>
-                </div>
+                  <button type="submit" class="btn btn-primary">Tampilkan</button>
+                </form>
               </div>
-
-            <!-- Modal -->
-            <div class="modal fade modal-fade-in-scale-up" id="modal_detail" aria-hidden="true" aria-labelledby="exampleModalTitle" role="dialog" tabindex="-1">
-              <!-- ambil html lewat controller -->
+              <div class="panel-body">
+                  <div id="tampiltable"></div>
+              </div>
             </div>
-                    <!-- End Modal -->
+          </div>
+
+        <!-- Modal -->
+        <div class="modal fade modal-fade-in-scale-up" id="modal_detail" aria-hidden="true" aria-labelledby="exampleModalTitle" role="dialog" tabindex="-1">
+          <!-- ambil html lewat controller -->
+        </div>
+        <!-- End Modal -->
 
 
-              <!-- Template digunakan untuk membuat input field -->
-              <template id="order-cart">
-                <!-- #id# supaya membuat identik, sehingga value dapat diambil -->
-                <tr data-row-id="#id#">
-                  <!-- Kode Ice Cream -->
-                  <td>#id#</td>
-                  <input type ="hidden" name = "order[#id#][id_produk]" class=""  id="kode#id#">
-                  <!-- Nama Ice Cream -->
-                  <td>
-                    <input type ="text" name = "order[#id#][nama_produk]" class="form-control" id="autocomplete#id#" 
-                    placeholder = "Ketikan Kode/Nama Barang ..." autocomplete = "off">
-                    <!-- Autocomplete dibikin off supaya gak rese', karna kalau on suka keluar angka dari rekomendasi -->
-                  </td>
-                  <td>
-                    <input type ="text" name ="order[#id#][harga_produk]" class="form-control" id="harga_produk#id#">
-                  </td>
-                  <td>
-                    <input type ="text" name = "order[#id#][quantity]" class="form-control" id="quantity#id#">
-                  </td>
-                  <td>
-                    <input type ="text" name = "order[#id#][sub_total]" class="form-control hitungTotal" id="sub_total#id#" >
-                  </td>
-                  <td>
-                    <button type="button" class="btn btn-sm btn-icon btn-flat btn-danger delete" data-id="#id#"><i class="wb-close"></i></button>
-                  </td>
-                </tr>
-              </template>
+<!-- Template digunakan untuk membuat input field -->
+<template id="order-cart">
+  <!-- #id# supaya membuat identik, sehingga value dapat diambil -->
+  <tr data-row-id="#id#">
+    <!-- Kode Ice Cream -->
+    <td>#id#</td>
+    <input type ="hidden" name = "order[#id#][id_produk]" class=""  id="kode#id#">
+    <!-- Nama Ice Cream -->
+    <td>
+      <input type ="text" name = "order[#id#][nama_produk]" class="form-control" id="autocomplete#id#" 
+      placeholder = "Ketikan Kode/Nama Barang ..." autocomplete = "off">
+      <!-- Autocomplete dibikin off supaya gak rese', karna kalau on suka keluar angka dari rekomendasi -->
+    </td>
+    <td>
+      <input type ="text" name ="order[#id#][harga_produk]" class="form-control" id="harga_produk#id#">
+    </td>
+    <td>
+      <input type ="text" name = "order[#id#][quantity]" class="form-control" id="quantity#id#">
+    </td>
+    <td>
+      <input type ="text" name = "order[#id#][sub_total]" class="form-control hitungTotal" id="sub_total#id#" >
+    </td>
+    <td>
+      <button type="button" class="btn btn-sm btn-icon btn-flat btn-danger delete" data-id="#id#"><i class="wb-close"></i></button>
+    </td>
+  </tr>
+</template>
 
-              <!-- JQUERY UI -->
-              <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<!-- JQUERY UI -->
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 
-              <script>
-                (function($) {
-                  function to_rupiah(angka){
-                    var rev     = parseInt(angka, 10).toString().split('').reverse().join('');
-                    var rev2    = '';
-                    for(var i = 0; i < rev.length; i++){
-                      rev2  += rev[i];
-                      if((i + 1) % 3 === 0 && i !== (rev.length - 1)){
-                        rev2 += '.';
-                      }
-                    }
-                    return rev2.split('').reverse().join('');
-                  } 
+<script>
+  (function($) {
+    function to_rupiah(angka){
+      var rev     = parseInt(angka, 10).toString().split('').reverse().join('');
+      var rev2    = '';
+      for(var i = 0; i < rev.length; i++){
+        rev2  += rev[i];
+        if((i + 1) % 3 === 0 && i !== (rev.length - 1)){
+          rev2 += '.';
+        }
+      }
+      return rev2.split('').reverse().join('');
+    } 
 
-                  var template = $('#order-cart').html()
-                  // Ambil Template HTML DARI Id product-cart
-                  // Function untuk tambah baris tabel
-                  function tambahBaris(){
-                    var currentId = $('#cart tbody tr:last-child').data('row-id') || 0
-                    // Ambil Nomor ID, Jika tidak ada diganti dengan 0
-                    $('#cart tbody').append(template.replace(/#id#/g, currentId + 1))
-                    // Fungsi Append buat menambah element, dari template tadi dan diganti #id# dengan currentID
-                    $('body').on('keyup','#quantity'+ (currentId + 1), function(){
-                      var qty = $('#quantity'+ (currentId + 1)).val() 
-                      var hargaProduk = $('#harga_produk'+ (currentId + 1)).val()
-                      var subTotal  = qty * hargaProduk
-                      $('#sub_total'+(currentId + 1)).val(subTotal)
-                      hitungTotal()
-                    })
+    var template = $('#order-cart').html()
+    // Ambil Template HTML DARI Id product-cart
+    // Function untuk tambah baris tabel
+    function tambahBaris(){
+      var currentId = $('#cart tbody tr:last-child').data('row-id') || 0
+      // Ambil Nomor ID, Jika tidak ada diganti dengan 0
+      $('#cart tbody').append(template.replace(/#id#/g, currentId + 1))
+      // Fungsi Append buat menambah element, dari template tadi dan diganti #id# dengan currentID
+      $('body').on('keyup','#quantity'+ (currentId + 1), function(){
+        var qty = $('#quantity'+ (currentId + 1)).val() 
+        var hargaProduk = $('#harga_produk'+ (currentId + 1)).val()
+        var subTotal  = qty * hargaProduk
+        $('#sub_total'+(currentId + 1)).val(subTotal)
+        hitungTotal()
+      })
 
-                    $('body').on('click',"#autocomplete"+ (currentId + 1), function(){
-                      $("#autocomplete"+ (currentId + 1)).autocomplete({    
-                        minLength:1,
-                        source:function( request, result ) {
-                          $.ajax({
-                            url: '<?php echo site_url('ordergudang/autocompleteproduk') ?>',
-                            dataType: "json",
-                            data: 'cari=' + request.term,
-                            success: function( data ) {
-                              result($.map(data, function (item) {
-                                return {
-                                  label: item.search,
-                                  value: item.id,
-                                  data: item
-                                };
-                              }));
-                            },
-                            error: function(e){  
-                              alert('Error: ' + request);  
-                            }  
-                          });
-                        },
-                        // appendTo : "#exampleNiftyFadeScale",
-                        select: function( event, ui ) {
-                          // console.log(ui)
-                          $('#harga_produk' + (currentId + 1)).val(ui.item.data.price * (100 - ui.item.data.het_gudang)/100);
-                          $('#kode' + (currentId + 1)).val(ui.item.data.id);
-                          $("#autocomplete" + (currentId + 1)).val(ui.item.data.code);
-                          // reset input text
-                          $('#sub_total'+(currentId + 1)).val('0')
-                          $('#quantity'+(currentId + 1)).val('')
-                          // end reset input text
-                          return false;
-                        },
-                      });
+      $('body').on('click',"#autocomplete"+ (currentId + 1), function(){
+        $("#autocomplete"+ (currentId + 1)).autocomplete({    
+          minLength:1,
+          source:function( request, result ) {
+            $.ajax({
+              url: '<?php echo site_url('ordergudang/autocompleteproduk') ?>',
+              dataType: "json",
+              data: 'cari=' + request.term,
+              success: function( data ) {
+                result($.map(data, function (item) {
+                  return {
+                    label: item.search,
+                    value: item.id,
+                    data: item
+                  };
+                }));
+              },
+              error: function(e){  
+                alert('Error: ' + request);  
+              }  
+            });
+          },
+          // appendTo : "#exampleNiftyFadeScale",
+          select: function( event, ui ) {
+            // console.log(ui)
+            $('#harga_produk' + (currentId + 1)).val(ui.item.data.price * (100 - ui.item.data.het_gudang)/100);
+            $('#kode' + (currentId + 1)).val(ui.item.data.id);
+            $("#autocomplete" + (currentId + 1)).val(ui.item.data.code);
+            // reset input text
+            $('#sub_total'+(currentId + 1)).val('0')
+            $('#quantity'+(currentId + 1)).val('')
+            // end reset input text
+            return false;
+          },
+        });
 
-                      $("#autocomplete"+ (currentId + 1)).autocomplete("option" , "appendTo", ".formmodaltambah")
+        $("#autocomplete"+ (currentId + 1)).autocomplete("option" , "appendTo", ".formmodaltambah")
 
-                    })
+      })
 
-                    $('#sub_total'+ (currentId+1)).val(0)
-                    hitungTotal()   
-                  }
+      $('#sub_total'+ (currentId+1)).val(0)
+      hitungTotal()   
+    }
 
-                  tambahBaris()
-                  // EVENT KLIK TOMBOL
-                  $('#tambah').on('click', function (e) {
-                    tambahBaris()
-                  })
+    tambahBaris()
+    // EVENT KLIK TOMBOL
+    $('#tambah').on('click', function (e) {
+      tambahBaris()
+    })
+    
+    // DELETE
+    $('body').on('click', '.delete', function (e) {
+      $(this).parents('tr').remove()
+      hitungTotal()
+    })
+
+    $(document).on('keydown', 'body', function(e){
+      var charCode = ( e.which ) ? e.which : event.keyCode;
+      if(charCode == 118) //F7
+      {
+        tambahBaris();
+        return false;
+      }
+    });
+
+    function hitungTotal(){
+      var total = 0
+      $('.hitungTotal').each(function(){
+        var totals = $(this).val()
+        total = parseInt(total) + parseInt(totals)
+        $('input[name=total_pembelian]').val(total)
+        $('.tampilTotalBeli').html(to_rupiah(total))
+      })
+    }
+  })(jQuery)
+
+  function save()
+  {
+    // $('[name="nipy"]').removeAttr("disabled");
+    $('#btnSave').text('saving...'); //change button text
+    $('#btnSave').attr('disabled',true); //set button disable 
+    var url;
+
+    url = "<?php echo site_url('ordergudang/add')?>";
+
+    // ajax adding data to database
+
+    var formData = new FormData($('#form')[0]);
+    $.ajax({
+      url : url,
+      type: "POST",
+      data: formData,
+      contentType: false,
+      processData: false,
+      dataType: "JSON",
+      success: function(data)
+      {
+
+            if(data.status) //if success close modal and reload ajax table
+            {
+                $('#exampleNiftyFadeScale').modal('hide');
+
+                var alert = `<div class="alert alert-alt alert-success alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                    ${data.flash_header} <br><a class="alert-link" style="margin-left: 0" href="javascript:void(0)">${data.flash_desc}</a>
+                  </div>`
+
+                  $('.page-header').append(alert)
                   
-                  // DELETE
-                  $('body').on('click', '.delete', function (e) {
-                    $(this).parents('tr').remove()
-                    hitungTotal()
-                  })
-
-                  $(document).on('keydown', 'body', function(e){
-                    var charCode = ( e.which ) ? e.which : event.keyCode;
-                    if(charCode == 118) //F7
-                    {
-                      tambahBaris();
-                      return false;
-                    }
-                  });
-
-                  function hitungTotal(){
-                    var total = 0
-                    $('.hitungTotal').each(function(){
-                      var totals = $(this).val()
-                      total = parseInt(total) + parseInt(totals)
-                      $('input[name=total_pembelian]').val(total)
-                      $('.tampilTotalBeli').html(to_rupiah(total))
-                    })
-                  }
-                })(jQuery)
-
-                function save()
-                {
-                  // $('[name="nipy"]').removeAttr("disabled");
-                  $('#btnSave').text('saving...'); //change button text
-                  $('#btnSave').attr('disabled',true); //set button disable 
-                  var url;
-
-                  url = "<?php echo site_url('ordergudang/add')?>";
-
-                  // ajax adding data to database
-
-                  var formData = new FormData($('#form')[0]);
-                  $.ajax({
-                    url : url,
-                    type: "POST",
-                    data: formData,
-                    contentType: false,
-                    processData: false,
-                    dataType: "JSON",
-                    success: function(data)
-                    {
-
-                          if(data.status) //if success close modal and reload ajax table
-                          {
-                              $('#exampleNiftyFadeScale').modal('hide');
-
-                              var alert = `<div class="alert alert-alt alert-success alert-dismissible" role="alert">
-                                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                  </button>
-                                  ${data.flash_header} <br><a class="alert-link" style="margin-left: 0" href="javascript:void(0)">${data.flash_desc}</a>
-                                </div>`
-
-                                $('.page-header').append(alert)
-                                
-                             location.reload();  
+               location.reload();  
 
 
-                          } else {
+            } else {
 
-                            $('#exampleNiftyFadeScale').modal('hide');
+              $('#exampleNiftyFadeScale').modal('hide');
 
-                             var alertgagal = `<div class="alert alert-alt alert-danger alert-dismissible" role="alert">
-                                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                  </button>
-                                  ${data.flash_header} <br><a class="alert-link" style="margin-left: 0" href="javascript:void(0)">${data.flash_desc}</a>
-                                </div>`
+               var alertgagal = `<div class="alert alert-alt alert-danger alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                    ${data.flash_header} <br><a class="alert-link" style="margin-left: 0" href="javascript:void(0)">${data.flash_desc}</a>
+                  </div>`
 
-                                $('.page-header').append(alertgagal)
-                          }
+                  $('.page-header').append(alertgagal)
+            }
 
 
-                          $('#btnSave').text('save'); //change button text
-                          $('#btnSave').attr('disabled',false); //set button enable 
+            $('#btnSave').text('save'); //change button text
+            $('#btnSave').attr('disabled',false); //set button enable 
 
-                        },
-                        error: function (jqXHR, textStatus, errorThrown)
-                        {
-                          console.log(jqXHR);
-                          alert('Error adding / update data');
-                          $('#btnSave').text('save'); //change button text
-                          $('#btnSave').attr('disabled',false); //set button enable 
+          },
+          error: function (jqXHR, textStatus, errorThrown)
+          {
+            console.log(jqXHR);
+            alert('Error adding / update data');
+            $('#btnSave').text('save'); //change button text
+            $('#btnSave').attr('disabled',false); //set button enable 
 
-                        }
-                      });
-                }
+          }
+        });
+  }
 
-                function detail_account(id)
-                {
-                  // save_method = 'update';
-                  // $('#form')[0].reset(); // reset form on modals
-                  $('.form-group').removeClass('has-error'); // clear error class
-                  $('.help-block').empty(); // clear error string
+  function wishlist()
+  {
+    // $('[name="nipy"]').removeAttr("disabled");
+    $('#btnWishlist').text('saving...'); //change button text
+    $('#btnWishlist').attr('disabled',true); //set button disable 
+    var url;
 
-                  //Ajax Load data from ajax
-                  $.ajax({
-                    url : "<?php echo site_url('ordergudang/detailKeluar')?>/" + id,
-                    type: "GET",
-                      // dataType: "JSON",
-                      success: function(data)
-                      {
+    url = "<?php echo site_url('ordergudang/addWishlist')?>";
 
-                          $('#modal_detail').html(data); // show bootstrap modal when complete loaded
-                          $('#modal_detail').modal('show'); // show bootstrap modal when complete loaded
-                          $('.modal-title').text('Data Detail Order'); // Set title to Bootstrap modal title
+    // ajax adding data to database
 
-                        },
-                        error: function (jqXHR, textStatus, errorThrown)
-                        {
-                          alert('Error get data from ajax');
-                        }
-                      });
-                }
+    var formData = new FormData($('#form')[0]);
+      $.ajax({
+        url : url,
+        type: "POST",
+        data: formData,
+        contentType: false,
+        processData: false,
+        dataType: "JSON",
+        success: function(data)
+        {
+          if(data.status) //if success close modal and reload ajax table
+          {
+              $('#exampleNiftyFadeScale').modal('hide');
 
-                function delete_account(id)
-                {
-                  if(confirm('Are you sure delete this data?'))
+              var alert = `<div class="alert alert-alt alert-success alert-dismissible" role="alert">
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                  ${data.flash_header} <br><a class="alert-link" style="margin-left: 0" href="javascript:void(0)">${data.flash_desc}</a>
+                </div>`
+
+                $('.page-header').append(alert)
+                
+             location.reload();  
+
+          } else {
+
+            $('#exampleNiftyFadeScale').modal('hide');
+
+             var alertgagal = `<div class="alert alert-alt alert-danger alert-dismissible" role="alert">
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                  ${data.flash_header} <br><a class="alert-link" style="margin-left: 0" href="javascript:void(0)">${data.flash_desc}</a>
+                </div>`
+
+                $('.page-header').append(alertgagal)
+          }
+
+
+          $('#btnWishlist').text('save'); //change button text
+          $('#btnWishlist').attr('disabled',false); //set button enable 
+
+        },
+        error: function (jqXHR, textStatus, errorThrown)
+        {
+          // location.reload();
+
+        }
+      });
+    }
+
+    function detail_account(id)
+    {
+      // save_method = 'update';
+      // $('#form')[0].reset(); // reset form on modals
+      $('.form-group').removeClass('has-error'); // clear error class
+      $('.help-block').empty(); // clear error string
+
+      //Ajax Load data from ajax
+      $.ajax({
+        url : "<?php echo site_url('ordergudang/detailKeluar')?>/" + id,
+        type: "GET",
+          // dataType: "JSON",
+          success: function(data)
+          {
+
+              $('#modal_detail').html(data); // show bootstrap modal when complete loaded
+              $('#modal_detail').modal('show'); // show bootstrap modal when complete loaded
+              $('.modal-title').text('Data Detail Order'); // Set title to Bootstrap modal title
+
+            },
+            error: function (jqXHR, textStatus, errorThrown)
+            {
+              alert('Error get data from ajax');
+            }
+          });
+    }
+
+    function delete_account(id)
+    {
+      if(confirm('Are you sure delete this data?'))
+      {
+          // ajax delete data to database
+          $.ajax({
+            url : "<?php echo site_url('ordergudang/delete')?>/"+id,
+            type: "POST",
+            dataType: "JSON",
+            success: function(data)
+            {
+                  if(data.status) //if success close modal and reload ajax table
                   {
-                      // ajax delete data to database
-                      $.ajax({
-                        url : "<?php echo site_url('ordergudang/delete')?>/"+id,
-                        type: "POST",
-                        dataType: "JSON",
-                        success: function(data)
-                        {
-                              if(data.status) //if success close modal and reload ajax table
-                              {
 
-                                  var alert = `<div class="alert alert-alt alert-success alert-dismissible" role="alert">
-                                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                      </button>
-                                      ${data.flash_header} <br><a class="alert-link" style="margin-left: 0" href="javascript:void(0)">${data.flash_desc}</a>
-                                    </div>`
+                      var alert = `<div class="alert alert-alt alert-success alert-dismissible" role="alert">
+                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                          ${data.flash_header} <br><a class="alert-link" style="margin-left: 0" href="javascript:void(0)">${data.flash_desc}</a>
+                        </div>`
 
-                                    $('.page-header').append(alert)
+                        $('.page-header').append(alert)
 
-                                  location.reload();
+                      location.reload();
 
-                              } else {
+                  } else {
 
-                                 var alertgagal = `<div class="alert alert-alt alert-danger alert-dismissible" role="alert">
-                                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                      </button>
-                                      ${data.flash_header} <br><a class="alert-link" style="margin-left: 0" href="javascript:void(0)">${data.flash_desc}</a>
-                                    </div>`
+                     var alertgagal = `<div class="alert alert-alt alert-danger alert-dismissible" role="alert">
+                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                          ${data.flash_header} <br><a class="alert-link" style="margin-left: 0" href="javascript:void(0)">${data.flash_desc}</a>
+                        </div>`
 
-                                    $('.page-header').append(alertgagal)
-                              }
-                            },
-                            error: function (jqXHR, textStatus, errorThrown)
-                            {
-                              alert('Error deleting data');
-                            }
-                          });
-
-                    }
+                        $('.page-header').append(alertgagal)
                   }
+                },
+                error: function (jqXHR, textStatus, errorThrown)
+                {
+                  alert('Error deleting data');
+                }
+              });
 
-                  $('document').ready(function(){
-                    $('#formLapPenjualan').submit(function(e){
-                      e.preventDefault()
-                      $.ajax({
-                        type: "POST",
-                        url: '<?php echo site_url('ordergudang/lapOrderByKeluar') ?>',
-                        data: $('#formLapPenjualan').serialize(),
-                        success: function(data){
-                          $('#tampiltable').html(data)
-                        }
-                      })
-                    })
-                  })
+        }
+      }
 
-            </script>
+      $('document').ready(function(){
+        $('#formLapPenjualan').submit(function(e){
+          e.preventDefault()
+          $.ajax({
+            type: "POST",
+            url: '<?php echo site_url('ordergudang/lapOrderByKeluar') ?>',
+            data: $('#formLapPenjualan').serialize(),
+            success: function(data){
+              $('#tampiltable').html(data)
+            }
+          })
+        })
+      })
+
+</script>
