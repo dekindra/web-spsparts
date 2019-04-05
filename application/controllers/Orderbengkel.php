@@ -350,9 +350,9 @@ class Orderbengkel extends CI_Controller {
             // die();
 
             $data = array(
-                'status_order'     => '2',
-                'tanggal_selesai' => $tm,
-                'jatuh_tempo' => $jatuh_tempo,
+                'status_order'      => '2',
+                'tanggal_selesai'   => $tm,
+                'jatuh_tempo'       => $jatuh_tempo,
                     // 'tanggal_pembayaran' => $jatuh_tempo,
             );
 
@@ -364,9 +364,10 @@ class Orderbengkel extends CI_Controller {
 
                 foreach($id_produk AS $key => $val){
                  $result = array(
-                  "id_p" => $_POST['id'][$key],
-                  "id_bengkel" => $this->session->userdata('outlet_id'),
-                  "stock"  => $_POST['qty'][$key],
+                  "id_p"        => $_POST['id'][$key],
+                  "id_bengkel"  => $this->session->userdata('outlet_id'),
+                  "stock"       => $_POST['qty'][$key],
+                  "harga_jual"  => $_POST['het'][$key],
               );
 
                  $ckDtInven = $this->Constant_model->getDataTwoColumn('inventory', 'id_p', $result['id_p'], 'id_bengkel',$result['id_bengkel']);

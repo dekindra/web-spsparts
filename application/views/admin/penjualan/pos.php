@@ -482,7 +482,8 @@ function formatRP($angka){
       <!-- Autocomplete dibikin off supaya gak rese', karna kalau on suka keluar angka dari rekomendasi -->
     <!-- </td> -->
     <td>
-      <input type ="text" name = "order[#id#][harga_produk]" class="form-control" disabled="disabled" id="harga_produk#id#" >
+      <input type ="text" name = "order[#id#][harga_jual]" class="form-control" disabled="disabled" id="harga_jual#id#" >
+      <input type ="hidden" name = "order[#id#][harga_produk]" class="form-control" disabled="disabled" id="harga_produk#id#" >
       <input type ="hidden" name = "order[#id#][het_produk]" class="form-control" disabled="disabled" id="het_produk#id#" >
     </td>
     <td>
@@ -677,12 +678,14 @@ function formatRP($angka){
       $('body').on('keyup','#quantity'+ (currentId + 1), function(){
         delay(function (){
           var qty = $('#quantity'+ (currentId + 1)).val() 
-          var hargaProduk = $('#harga_produk'+ (currentId + 1)).val()
-          var subTotal  = qty * hargaProduk
+          var hargaJual = $('#harga_jual'+ (currentId + 1)).val()
+          var subTotal  = qty * hargaJual
           $('#sub_total'+(currentId + 1)).val(subTotal)
           hitungTotal()
 
-          var untung = ($('#het_produk'+ (currentId + 1)).val() * hargaProduk)/100 
+          var hargaProduk = $('#harga_produk'+ (currentId + 1)).val() * ((100 - $('#het_produk'+ (currentId + 1)).val()) / 100)
+          var untung = hargaJual - hargaProduk 
+
           var keuntungan  = (qty * untung)
 
           $('#keuntungan'+(currentId + 1)).val(keuntungan)
@@ -721,10 +724,17 @@ function formatRP($angka){
           select: function( event, ui ) {
             // console.log(ui)
             $('#harga_produk' + (currentId + 1)).val(ui.item.data.price);
+            $('#harga_jual' + (currentId + 1)).val(ui.item.data.harga_jual);
             $('#id' + (currentId + 1)).val(ui.item.data.id);
             $("#autocomplete" + (currentId + 1)).val(ui.item.data.search);
             $("#het_produk" + (currentId + 1)).val(ui.item.data.het_bengkel);
             $("#stock_produk" + (currentId + 1)).val(ui.item.data.stock);
+
+            // reset input text
+            $('#sub_total'+(currentId + 1)).val('0')
+            $('#quantity'+(currentId + 1)).val('')
+            // end reset input text
+
             return false;
           },
         });

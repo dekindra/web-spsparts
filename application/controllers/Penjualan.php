@@ -498,6 +498,7 @@ class Penjualan extends CI_Controller {
                 'search'    => $row->searchdeskripsi,
                 'code'      => $row->code_p,
                 'het_bengkel'    => $row->het_bengkel,
+                'harga_jual'    => $row->harga_jual,
                 'price'     => $row->purchase_price,
                 'stock'     => $row->stock,
             );

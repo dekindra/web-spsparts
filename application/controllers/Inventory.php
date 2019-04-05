@@ -149,6 +149,34 @@ class Inventory extends CI_Controller {
         $this->load->view('admin/templates/layout', $data);
     }
 
+    public function ajax_edit($id)
+    {
+        $outlet = $this->session->userdata('outlet_id');
+        $data = $this->Constant_model->getDataTwoColumnRow('inventory','id_p', $id, 'id_bengkel', $outlet);
+
+        echo json_encode($data);
+    }
+
+ 
+    public function update()
+    {
+        // $this->_validate();
+        $id = $this->input->post('id');
+        $outlet = $this->session->userdata('outlet_id');
+        
+        $data = array(
+            'harga_jual' => $this->input->post('harga_jual'),
+        );
+  
+        $this->Constant_model->updateDataDinamisTwoWhere('inventory', $data, 'id_p', $id , 'id_bengkel', $outlet);
+
+        echo json_encode(array(
+            "status" => TRUE,
+            "flash_header"  => 'Update Harga Produk',
+            "flash_desc"  => 'Berhasil mengupdate harga produk',
+        ));
+    }
+
 
     private function getDataCek(){
         $outlet_id = $this->session->userdata('outlet_id');

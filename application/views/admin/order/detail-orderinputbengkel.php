@@ -96,6 +96,7 @@ function formatRP($angka){
                       <td class="">Rp. <?php echo formatRP($d -> subtotal); ?></td>
                       <?php if($data["status_order"]>0) :?>
                       <input type="hidden" name="id[]" value="<?php echo $d -> id_p ?>">
+                      <input type="hidden" name="het[]" value="<?php echo $d -> purchase_price ?>">
                       <td><input type="text" class="form-control" style="max-width: 75px" name="qtyditerima[]" value="<?php echo $d -> qtyditerima ?>"></td>
                       <?php endif ?>
                     </tr> 
@@ -130,24 +131,30 @@ function formatRP($angka){
       <!-- End Panel Table Tools -->
     </div>
 
-    <script type="text/javascript">
+<script type="text/javascript">
 
-      function selesaiOrder(kode){
-        var qtyditerima = [];
-        var id_produk = [];
+  function selesaiOrder(kode){
+    var qtyditerima = [];
+    var id_produk = [];
+    var het_produk = [];
 
-        $('[name="qtyditerima[]"]').each(function() {
-          qtyditerima.push(this.value);
-        });
-        $('[name="id[]"]').each(function() {
-          id_produk.push(this.value);
-        });
+    $('[name="qtyditerima[]"]').each(function() {
+      qtyditerima.push(this.value);
+    });
+
+    $('[name="id[]"]').each(function() {
+      id_produk.push(this.value);
+    });
+
+    $('[name="het[]"]').each(function() {
+      het_produk.push(this.value);
+    });
 
     // console.log(qtyditerima);
     // console.log(list_idnotcheck);
     $.ajax({
       type: "POST",
-      data: {qty:qtyditerima, id:id_produk},
+      data: {qty:qtyditerima, id:id_produk, het:het_produk},
       url: "<?php echo site_url('orderbengkel/selesaiOrder')?>/" + kode,
       dataType: "JSON",
       success: function(data)
