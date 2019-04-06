@@ -318,11 +318,20 @@ function formatRP($angka){
                       </div>
                       <div class="tab-pane" id="exampleTabsLineTwo" role="tabpanel">
                         <div class="text-center">
-                          <div class="row">
-                            <div class="col-md-12">
-                              <div class="mb-15">
+
+                              <!-- <div class="mb-15">
                                 <a href="<?php echo base_url("excel/format.xlsx"); ?>">
                                 <button id="" class="btn btn-outline btn-warning"><i class="icon fa-download" aria-hidden="true"></i> Download Format Produk</button></a>  
+                              </div> -->
+                              <div class="row mb-15">
+                                <div class="col-md-6">
+                                  <a href="<?php echo base_url("excel/format.xlsx"); ?>">
+                                <button id="" class="btn btn-outline btn-warning"><i class="icon fa-download" aria-hidden="true"></i> Download Format Produk</button></a>
+                                </div>
+                                <div class="col-md-6">
+                                  <a href="<?php echo base_url('produk/exportproduk'); ?>">
+                                <button id="" class="btn btn-outline btn-success"><i class="icon fa-download" aria-hidden="true"></i> Download Data Produk Sekarang</button></a>
+                                </div>
                               </div>
                               <form autocomplete="off" id="formimport">
                                 <div class="mb-15">
@@ -332,8 +341,7 @@ function formatRP($angka){
                                   <button type="button" onclick="import_produk()" class="btn btn-outline btn-primary"><i class="icon fa-upload" aria-hidden="true"></i> Import Produk</button>  
                                 </div>
                               </form>
-                            </div>
-                          </div>
+
                         </div>
                       </div>
                     </div>
